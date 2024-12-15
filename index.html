@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
+</head>
+
+<body>
+  <div class="dashboard">
+    <hamburger-menu-toggle>
+      <button class="hamburger-menu" aria-label="Open Menu">☰</button>
+    </hamburger-menu-toggle>
+    <aside class="sidebar">
+      <page-navigator>
+        <nav>
+          <ul>
+            <li><a href="#button-customization" class="active">Button Components</a></li>
+            <li><a href="#form-customization">Form Components</a></li>
+            <li><a href="#popup-customization">Popup Components</a></li>
+            <li><a href="#loader-customization">Loader Components</a></li>
+          </ul>
+        </nav>
+      </page-navigator>
+    </aside>
+
+    <main class="content">
+      <section id="button-customization" class="page active">
+        <h2>Button Components</h2>
+        <button-tabs>
+          <div class="navigation">
+            <button class="nav-button active" data-target="button-active">Primary</button>
+            <button class="nav-button" data-target="button-secondary">Secondary</button>
+            <button class="nav-button" data-target="button-disabled">Disabled</button>
+            <button class="nav-button" data-target="button-hover">Hover</button>
+          </div>
+          <div class="active-element presentation-element">
+            <button class="button button-active active tab" data-source="button-active">Primary Button</button>
+            <button class="button button-secondary tab" data-source="button-active">Secondary Button</button>
+            <button class="button button-disabled tab" data-source="button-disabled">Disabled Button</button>
+            <button class="button button-hover tab" data-source="button-hover"><span>Hover Button</span></button>
+          </div>
+        </button-tabs>
+      </section>
+      <section id="form-customization" class="page">
+        <h2>Form Components</h2>
+        <button-tabs>
+          <div class="navigation">
+            <button class="nav-button active" data-target="form-radio">Radio</button>
+            <button class="nav-button" data-target="form-select">Select</button>
+            <button class="nav-button" data-target="form-text">Text</button>
+            <button class="nav-button" data-target="form-color">Color</button>
+          </div>
+          <div class="active-element">
+            <div class="form-field form-radio active tab">
+              <label for="radio-group">Choose an option:</label>
+              <input type="radio" id="option1" name="radio-group" value="Option 1"> <label for="option1">Option
+                1</label><br>
+              <input type="radio" id="option2" name="radio-group" value="Option 2"> <label for="option2">Option
+                2</label><br>
+              <input type="radio" id="option3" name="radio-group" value="Option 3"> <label for="option3">Option
+                3</label>
+            </div>
+            <div class="form-field form-select tab">
+              <div class="select-container">
+                <label for="dropdown">Choose a value:</label>
+                <select id="dropdown">
+                  <option value="Value 1">Value 1</option>
+                  <option value="Value 2">Value 2</option>
+                  <option value="Value 3">Value 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field form-text tab">
+              <label for="text">Enter text:</label>
+              <input type="text" id="text" placeholder="Type here">
+            </div>
+            <div class="form-field form-color tab">
+              <label for="color">Pick a color:</label>
+              <input type="color" id="color" value="#f0f0f0">
+            </div>
+          </div>
+        </button-tabs>
+      </section>
+      <section id="popup-customization" class="page">
+        <h2>Pop-up Components</h2>
+        <button-tabs>
+          <div class="navigation">
+            <button class="nav-button active" data-target="modal">Modal Popup</button>
+            <button class="nav-button" data-target="bottom-popup">Bottom Popup</button>
+            <button class="nav-button" data-target="fullscreen-popup">Fullscreen Popup</button>
+          </div>
+          <div class="active-element">
+            <popup-component class="modal popup active tab">
+              <div class="modal-content">
+                <span class="close">✕</span>
+                <h2>Modal Title</h2>
+                <p>This is a centered popup.</p>
+              </div>
+            </popup-component>
+            <popup-component class="bottom-popup success message popup tab">
+              <p>This is a slide-in popup from the bottom.</p>
+              <button class="close bottom-popup-close">✕</button>
+            </popup-component>
+            <popup-component class="fullscreen-popup popup tab">
+              <div class="fullscreen-popup-content">
+                <h1>Special Offer!</h1>
+                <p>Get 20% off your next purchase.</p>
+                <button class="close fullscreen-popup-close">✕</button>
+              </div>
+            </popup-component>
+          </div>
+      </button-tabs>
+      </section>
+      <section id="loader-customization" class="page active">
+        <h2>Loader Components</h2>
+        <button-tabs>
+          <div class="navigation">
+            <button class="nav-button active" data-target="loader-circle">Circle Loader</button>
+            <button class="nav-button" data-target="loader-bar">Bar Loader</button>
+            <button class="nav-button" data-target="loader-dots">Dots Loader</button>
+            <button class="nav-button" data-target="loader-shimmer">Shimmer Loader</button>
+          </div>
+          <div class="active-element">
+            <div class="loader loader-circle active tab" data-source="loader-circle">
+              <div class="circle"></div>
+            </div>
+            <div class="loader loader-bar tab" data-source="loader-bar">
+              <div class="bar"></div>
+            </div>
+            <div class="loader loader-dots tab" data-source="loader-dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="shimmer-product-card loader loader-shimmer tab">
+              <div class="skeleton image-placeholder"></div>
+              <div class="skelelton-information-container">
+                <div class="skeleton-addtocart-container">
+                  <div class="variant-swatch-addtocart variant-swatch skeleton"></div>
+                  <div class="variant-swatch-addtocart variant-swatch skeleton"></div>
+                </div>
+                <div class="skeleton title-placeholder"></div>
+                <div class="variant-options">
+                  <div class="variant-swatch skeleton"></div>
+                  <div class="variant-swatch skeleton"></div>
+                  <div class="variant-swatch skeleton"></div>
+                  <div class="variant-swatch skeleton"></div>
+                </div>
+                <div class="skeleton price-placeholder"></div>
+                <div class="skeleton title-placeholder"></div>
+              </div>
+            </div>
+          </div>
+        </button-tabs>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
